@@ -1,0 +1,1 @@
+const lagringserver = "/api/lagringserver";
