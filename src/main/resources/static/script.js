@@ -44,12 +44,26 @@ const hent = () => $.get(lagringserver + "/kunder", arrayTilBilletter => formate
 
 // Må ha litt bedre inputvalidering enn det her
 const inputvalidering = kunde =>{
-    if(kunde.fnavn==="")return false
-    else if(kunde.enavn==="")return false
-    else if(kunde.epost==="")return false
-    else if(kunde.filmen==="")return false
-    else if(kunde.antall==="" || kunde.antall ==="0")return false
-    else return kunde.nummer !== "";
+    if(kunde.fnavn===""){ alert("Du må fylle inn et fornavn.");
+        return false;
+    }else if(kunde.enavn==="") {
+        alert("Du må fylle inn et etternavn.");
+        return false;
+    }else if(kunde.epost==="") {
+        alert("Du må fylle inn en E-postadresse.");
+        return false;
+    }else if(kunde.filmen==="") {
+        alert("Du må velge en film først.");
+        return false;
+    }else if(kunde.antall==="" || kunde.antall ==="0") {
+        alert("Du må kjøpe minst 1 billett.");
+        return false;
+    }else if(kunde.nummer===""){
+        alert("Du må fylle inn et telefonnummer.");
+        return false;
+    }else return true;
+
+
 }
 
 
