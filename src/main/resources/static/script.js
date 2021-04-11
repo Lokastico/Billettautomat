@@ -46,11 +46,10 @@ const hent = () => $.get(lagringserver + "/kunder", arrayTilBilletter => formate
 //mottatt. Jeg skal også prøve å legge inn
 //type-sensitiv inputvalidering.
 const inputvalidering = kunde =>{
-    //const bokstaver = /^[A-Za-z]+$/;
-    if(kunde.fnavn==="" || !kunde.fnavn.match(/^\d+$/)){
+    if(kunde.fnavn==="" || !kunde.fnavn.match(/^[A-Za-z]+$/)){
         alert("Du må fylle inn et fornavn. Du kan ikke fylle inn siffer.");
         return false;
-    }else if(kunde.enavn==="" || kunde.enavn.match(/^\d+$/)) {
+    }else if(kunde.enavn==="" || !kunde.enavn.match(/^[A-Za-z]+$/)) {
         alert("Du må fylle inn et etternavn. Du kan ikke fylle inn siffer.");
         return false;
     }else if(kunde.epost==="") {
@@ -66,8 +65,6 @@ const inputvalidering = kunde =>{
         alert("Du må fylle inn et telefonnummer. (8 siffer)");
         return false;
     }else return true;
-
-
 }
 
 
