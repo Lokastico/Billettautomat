@@ -43,11 +43,15 @@ $(() => {
 const hent = () => $.get(lagringserver + "/kunder", arrayTilBilletter => formater(arrayTilBilletter));
 
 // Må ha litt bedre inputvalidering enn det her
+//mottatt. Jeg skal også prøve å legge inn
+//type-sensitiv inputvalidering.
 const inputvalidering = kunde =>{
-    if(kunde.fnavn===""){ alert("Du må fylle inn et fornavn.");
+    //const bokstaver = /^[A-Za-z]+$/;
+    if(kunde.fnavn==="" || !kunde.fnavn.match(/^\d+$/)){
+        alert("Du må fylle inn et fornavn. Du kan ikke fylle inn siffer.");
         return false;
-    }else if(kunde.enavn==="") {
-        alert("Du må fylle inn et etternavn.");
+    }else if(kunde.enavn==="" || kunde.enavn.match(/^\d+$/)) {
+        alert("Du må fylle inn et etternavn. Du kan ikke fylle inn siffer.");
         return false;
     }else if(kunde.epost==="") {
         alert("Du må fylle inn en E-postadresse.");
@@ -55,11 +59,11 @@ const inputvalidering = kunde =>{
     }else if(kunde.filmen==="") {
         alert("Du må velge en film først.");
         return false;
-    }else if(kunde.antall==="" || kunde.antall ==="0") {
+    }else if(kunde.antall==="" || kunde.antall ==="0" || !kunde.antall.match(/^\d+$/)) {
         alert("Du må kjøpe minst 1 billett.");
         return false;
-    }else if(kunde.nummer===""){
-        alert("Du må fylle inn et telefonnummer.");
+    }else if(kunde.nummer==="" || !kunde.nummer.match(/^\d+$/) ){
+        alert("Du må fylle inn et telefonnummer. (8 siffer)");
         return false;
     }else return true;
 

@@ -12,7 +12,7 @@
 </head>
 <body style="max-width: 400px;  background-color: bisque;">
 <h1>Bestilling av Kinobilletter</h1>
-<table id="tableform" class="table table-striped table-bordered">
+<table id="tableform" class="table table-striped table-bordered" style="border-width: 2px; border-color: black">
     <form>
         <div class="form-group">
             <label for="filmen">Velg film</label>
@@ -52,8 +52,8 @@
 
         <tr>
             <div id="nummeret">
-                <td>Telefonnr: </td>
-                <td><input type="text" id="nummer" placeholder="Ditt telefonnummer"></td>
+                <td>Telefonnr(8-siffer): </td>
+                <td><input type="text" id="nummer" placeholder="Ditt telefonnummer" minlength="8" maxlength="8"></td>
                 <td><p id="feilNummer" style="color: red;"></p></td>
             </div>
         </tr>
