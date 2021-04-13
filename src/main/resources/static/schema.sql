@@ -1,0 +1,10 @@
+CREATE TABLE kunde(
+    id INTEGER AUTO_INCREMENT NOT NULL,
+    fnavn VARCHAR(255) NOT NULL,
+    enavn VARCHAR(255) NOT NULL,
+    epost VARCHAR(255) NOT null,
+    filmen VARCHAR(255) NOT NULL,
+    antall VARCHAR(255) NOT NULL,
+    nummer VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);

@@ -6,26 +6,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/lagringserver/")
 public class Controller {
 
     @Autowired
-    AppRepo repo;
+    private AppRepo repo;
 
     @PostMapping("/kunder")
-    public void lagre(Kunde kunde) {
-        repo.leggInn(kunde);
+    public void lagre(Kunde innKunde) {
+        repo.lagreKunde(innKunde);
     }
 
     @GetMapping("/kunder")
-    public ArrayList<Kunde> hent() {
-        return repo.hentAlle();
+    public List<Kunde> hent() {
+        return repo.hentAlleKunder();
     }
 
     @DeleteMapping("/kunder")
     public void slett() {
-        repo.slettAlle();
+        repo.slettAlleKunder();
     }
 }
