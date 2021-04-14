@@ -16,6 +16,7 @@ public class Kunde {
         this.antall = antall;
         this.nummer = nummer;
     }
+    public Kunde(){}
 
     public String getFnavn() {
         return fnavn;
