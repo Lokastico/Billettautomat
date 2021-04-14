@@ -17,17 +17,17 @@ public class AppRepo {
     private JdbcTemplate db;
 
     public List<Kunde> hentAlleKunder(){
-        String sql = "SELECT * FROM Kunde";
+        String sql = "SELECT * FROM kunde";
         List<Kunde> alleKunder = db.query(sql, new BeanPropertyRowMapper(Kunde.class));
         return alleKunder;
     }
     public void lagreKunde(Kunde innKunde){
-        String sql = "INSERT INTO Kunde (fnavn, enavn, epost, filmen, antall, nummer) VALUES(?,?,?,?,?,?)";
+        String sql = "INSERT INTO kunde (fnavn, enavn, epost, filmen, antall, nummer) VALUES(?,?,?,?,?,?)";
         db.update(sql, innKunde.getFnavn(),innKunde.getEnavn(),innKunde.getEpost(),innKunde.getFilmen(),innKunde.getAntall(),innKunde.getNummer());
     }
 
     public void slettAlleKunder(){
-        String sql = "DELETE FROM Kunde";
+        String sql = "DELETE FROM kunde";
         db.update(sql);
     }
 
