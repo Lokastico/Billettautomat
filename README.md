@@ -6,7 +6,7 @@ GitHub brukernavn: Lokastico
 
 GitHub repo URL: https://github.com/DATA1700/oblig-3-Lokastico
 
-URL til Heroku app:
+URL til Heroku app:https://oblig-3-lokastico.herokuapp.com/
 
 Fullt navn: Markus Frogner Werner
 
