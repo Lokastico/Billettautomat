@@ -6,7 +6,6 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -16,14 +15,15 @@ public class AppRepo {
     @Autowired
     private JdbcTemplate db;
 
+    public void lagreKunde(Kunde innKunde){
+        String sql = "INSERT INTO kunde (fnavn, enavn, epost, filmen, antall, nummer) VALUES(?,?,?,?,?,?)";
+        db.update(sql, innKunde.getFnavn(),innKunde.getEnavn(),innKunde.getEpost(),innKunde.getFilmen(),innKunde.getAntall(),innKunde.getNummer());
+    }
+
     public List<Kunde> hentAlleKunder(){
         String sql = "SELECT * FROM kunde";
         List<Kunde> alleKunder = db.query(sql, new BeanPropertyRowMapper(Kunde.class));
         return alleKunder;
-    }
-    public void lagreKunde(Kunde innKunde){
-        String sql = "INSERT INTO kunde (fnavn, enavn, epost, filmen, antall, nummer) VALUES(?,?,?,?,?,?)";
-        db.update(sql, innKunde.getFnavn(),innKunde.getEnavn(),innKunde.getEpost(),innKunde.getFilmen(),innKunde.getAntall(),innKunde.getNummer());
     }
 
     public void slettAlleKunder(){

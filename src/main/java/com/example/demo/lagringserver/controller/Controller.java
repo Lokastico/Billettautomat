@@ -15,17 +15,17 @@ public class Controller {
     @Autowired
     private AppRepo repo;
 
-    @PostMapping("/kunder")
+    @PostMapping("/lagreKunder")
     public void lagre(Kunde innKunde) {
         repo.lagreKunde(innKunde);
     }
 
-    @GetMapping("/kunder")
+    @GetMapping("/hentAlleKunder")
     public List<Kunde> hent() {
         return repo.hentAlleKunder();
     }
 
-    @DeleteMapping("/kunder")
+    @DeleteMapping("/slettAlleKunder")
     public void slett() {
         repo.slettAlleKunder();
     }

@@ -18,7 +18,7 @@ $(() => {
         };
 
         if (inputvalidering(kunde)) {
-            $.post(lagringserver + "/kunder", kunde, () => hent());
+            $.post(lagringserver + "/lagreKunder", kunde, () => hent());
             Fornavn.val("");
             Etternavn.val("");
             Epost.val("");
@@ -31,7 +31,7 @@ $(() => {
     });
 
     $("#button2").click(() => {
-        $.ajax(lagringserver + "/kunder", {
+        $.ajax(lagringserver + "/slettKunder", {
             type: 'DELETE',
             success: () => hent(),
             error: (jqXhr, textStatus, errorMessage) => {return (errorMessage)}
@@ -40,7 +40,7 @@ $(() => {
 
 });
 
-const hent = () => $.get(lagringserver + "/kunder", arrayTilBilletter => formater(arrayTilBilletter));
+const hent = () => $.get(lagringserver + "/hentKunder", arrayTilBilletter => formater(arrayTilBilletter));
 
 // Må ha litt bedre inputvalidering enn det her
 //mottatt. Jeg skal også prøve å legge inn
