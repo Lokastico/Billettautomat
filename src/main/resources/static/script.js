@@ -31,7 +31,7 @@ $(() => {
     });
 
     $("#button2").click(() => {
-        $.ajax(lagringserver + "/slettKunder", {
+        $.ajax(lagringserver + "/slettAlleKunder", {
             type: 'DELETE',
             success: () => hent(),
             error: (jqXhr, textStatus, errorMessage) => {return (errorMessage)}
@@ -40,7 +40,7 @@ $(() => {
 
 });
 
-const hent = () => $.get(lagringserver + "/hentKunder", arrayTilBilletter => formater(arrayTilBilletter));
+const hent = () => $.get(lagringserver + "/hentAlleKunder", arrayTilBilletter => formater(arrayTilBilletter));
 
 // Må ha litt bedre inputvalidering enn det her
 //mottatt. Jeg skal også prøve å legge inn

@@ -21,7 +21,7 @@ public class AppRepo {
     }
 
     public List<Kunde> hentAlleKunder(){
-        String sql = "SELECT * FROM kunde";
+        String sql = "SELECT * FROM kunde order by enavn";
         List<Kunde> alleKunder = db.query(sql, new BeanPropertyRowMapper(Kunde.class));
         return alleKunder;
     }
