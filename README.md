@@ -14,3 +14,7 @@ Kort beskrivelse av applikasjon (5–10 setninger):
 Nettbestilling av kinobilletter hvor lagringen av billetter skjer i relasjonsdatabase.
 Billettene sorteres etter etternavn i databasen.
 inputvalidering hindrer bokstaver i telefonnummer, og hindrer tall i for- og etternavn.
+
+========
+
+Dette var en obligatorisk oppgave i faget Webprogrammering ved mitt 4.semester ved OsloMet (Anvendt Datateknologi, Bachelor)
